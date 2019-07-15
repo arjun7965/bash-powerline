@@ -6,9 +6,9 @@
 __powerline() {
     # Colors
     COLOR_RESET='\[\033[m\]'
-    COLOR_CWD=${COLOR_CWD:-'\[\033[0;34m\]'} # blue
+    COLOR_CWD=${COLOR_CWD:-'\[\033[0;33m\]'} # blue
     COLOR_GIT=${COLOR_GIT:-'\[\033[0;36m\]'} # cyan
-    COLOR_SUCCESS=${COLOR_SUCCESS:-'\[\033[0;32m\]'} # green
+    COLOR_SUCCESS=${COLOR_SUCCESS:-'\[\033[0;33m\]'} # green
     COLOR_FAILURE=${COLOR_FAILURE:-'\[\033[0;31m\]'} # red
 
     # Symbols
@@ -83,7 +83,7 @@ __powerline() {
             local git="$COLOR_GIT$(__git_info)$COLOR_RESET"
         fi
 
-        PS1="$cwd$git$symbol"
+        PS1="$symbol$cwd$git$ "
     }
 
     PROMPT_COMMAND="ps1${PROMPT_COMMAND:+; $PROMPT_COMMAND}"
